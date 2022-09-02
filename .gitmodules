@@ -1,0 +1,6 @@
+[submodule "fineances-fe"]
+	path = fineances-fe
+	url = https://github.com/DanielKlys7/fineances-fe
+[submodule "fineances-be"]
+	path = fineances-be
+	url = https://github.com/DanielKlys7/fineances-be
