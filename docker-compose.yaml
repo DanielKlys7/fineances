@@ -1,16 +1,26 @@
 version: "3.8"
 services:
   frontend:
-    build: ./frontend
+    build: ./fineances-fe
     ports:
       - "8080:8080"
     volumes:
-      - ./frontend:/app
+      - ./fineances-fe:/app
       - ./app/node_modules
+  db:
+    image: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb:/data/db
   backend:
-    build: ./backend
+    build: ./fineances-be
     ports:
       - "3000:3000"
     volumes:
-      - ./backend:/app
+      - ./fineances-be:/app
       - ./app/node_modules
+    depends_on:
+      - db
+volumes:
+  mongodb:
